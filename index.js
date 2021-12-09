@@ -93,7 +93,7 @@ app.post("/books/", async (request, response) => {
   response.send({ bookId: bookId });
 });
 //Update Book API
-app.put("books/:bookId/", async (request, response) => {
+app.put("/books/:bookId/", async (request, response) => {
   const { bookId } = request.params;
   const {
     title,
@@ -130,7 +130,7 @@ app.put("books/:bookId/", async (request, response) => {
   response.send("Book Updated Successfully");
 });
 //Delete Book API
-app.delete("books/:bookId/", async (request, response) => {
+app.delete("/books/:bookId/", async (request, response) => {
   const { bookId } = request.params;
   const deleteBookQuery = `
     DELETE FROM 
@@ -141,7 +141,7 @@ app.delete("books/:bookId/", async (request, response) => {
   response.send("Book Deleted Successfully");
 });
 //Get Author Books API
-app.get("author/:authorId/books", async (request, response) => {
+app.get("/author/:authorId/books", async (request, response) => {
   const { authorId } = request.params;
   const getAuthorBooksQuery = `
     SLECT * 
